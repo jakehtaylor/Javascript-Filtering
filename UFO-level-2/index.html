@@ -6,21 +6,64 @@
     <title>UFO Sightings</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../static/css/style.css">
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 </head>
-<body>
+<body style="background-color: rgb(22, 21, 21); background-image: url(https://cdn.cnn.com/cnnnext/dam/assets/180313050904-navy-ufo-encounter-full-169.jpg)">
+    <br>
     
 
+    </div>
+    <div class="container.fluid" style="opacity: .9">
+        <div class="row justify-content-center" style="text-align: center">
+            <div class="col-md-10">
+                <div class="jumbotron bg-dark text-light">
+                    <h1 class="display-3">The Truth is Out There</h1>
+                    <p class="lead"> Data on UFO sightings in North America</p>
+                </div>
+            </div>
+        </div>  
+        <div class="row justify-content-center">
+            <div class="col-md-2">
+                <h3 style="color:white;"> Filters </h3>
+                <form id="form" class="border border-dark rounded bg-dark text-light" style="border-width:15px !important;">
+                    
+                    <label for="date_in">Date</label>
+                    <input type="text" class="form-control text-light" id="date_in" placeholder="MM/DD/YYYY">
+                    <label for="shape">Shape</label>
+                    <select id="shape" class="form-control">
+                        <option selected>all</option>
+                    </select>
+                
+                    <label for="country">Country</label>
+                    <select id="country" class="form-control">
+                        <option selected>all</option>
+                        <option>ca</option>
+                        <option>us</option>
+                    </select>
+                
+                    <label for="state">State</label>
+                    <select id="state" class="form-control">
+                    </select>
+                
+                    <label for="city">City</label>
+                    <select id="city" class="form-control">
+                    </select>
+                    
+                </form>
+            </div>
 
-
-
-
-
-
-
-
-
-
+            <div class="col-md-9 border border-dark rounded bg-dark">
+                <table class="table table-hover table-dark table-striped">
+                    <thead></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
     
+
     <script src="../static/js/data.js"> </script>
     <script src="../static/js/UFO.js"> </script>
 
