@@ -12,20 +12,35 @@
 
     <div class="container">
         <div class="row">
-            <form id="date_form">
-                <div class="form-group">
-                    <label for="date_in">Filter By Date</label>
-                    <input type="text" class="form-control" id="date_in" placeholder="MM/DD/YYYY">
-    
-
+            <form id="form">
+                <div class="form-row">
+                    <div class="col">
+                        <label for="date_in">Filter By Date</label>
+                        <input type="text" class="form-control" id="date_in" placeholder="MM/DD/YYYY">
+                    </div>
+                    <div class="col">
+                        <label for="country">Country</label>
+                        <select id="country" class="form-control">
+                            <option selected>choose...</option>
+                            <option>ca</option>
+                            <option>us</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="state">State</label>
+                        <select id="state" class="form-control">
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="city">City</label>
+                        <select id="city" class="form-control">
+                        </select>
+                    </div>
                 </div>
-
-
             </form>
 
         </div>
-
-
+        <br>
 
         <div class="row">
             <table class="table table-hover table-dark table-striped">
