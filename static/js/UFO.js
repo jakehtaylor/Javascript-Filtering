@@ -26,6 +26,13 @@ function buildTable(data) {
 
 buildTable(data);
 
+var inputDate = d3.select("#date_in");
+var country = d3.select("#country");
+var state = d3.select("#state");
+var city = d3.select("#city");
+var shape = d3.select("#shape");
+var form = d3.select("#form");
+
 var shapes = sightings.map(s => s.shape);
 var u_shapes = [... new Set(shapes)];
 u_shapes.forEach(sh => {
@@ -35,6 +42,10 @@ u_shapes.forEach(sh => {
 
 function filter_shape(data) {
     var shape = d3.select("#shape").property("value");
+    if (shape === "all") {
+        return data;
+    };
+
     var filtered = data.filter(sight => sight.shape === shape);
     return filtered;
 };
@@ -42,12 +53,18 @@ function filter_shape(data) {
 
 function filter_date(data) {
     var date = d3.select("#date_in").property("value");
+    if (date === "") {
+        return data;
+    };
     var filtered = data.filter(sight => sight.datetime === date);
     return filtered;
 };
 
 function filter_country(data) {
     var country = d3.select("#country").property("value");
+    if (country === "all") {
+        return data;
+    };
     var filtered = data.filter(sight => sight.country === country);
     return filtered;
 };
@@ -55,6 +72,9 @@ function filter_country(data) {
 
 function filter_state(data) {
     var state = d3.select("#state").property("value");
+    if (state === "all") {
+        return data;
+    };
     var filtered = data.filter(sight => sight.state === state);
     return filtered;
 };
@@ -62,6 +82,9 @@ function filter_state(data) {
 
 function filter_city(data) {
     var city = d3.select("#city").property("value");
+    if (city === "all") {
+        return data;
+    };
     var filtered = data.filter(sight => sight.city === city);
     return filtered;
 };
@@ -95,12 +118,7 @@ function city_drop(){
 
 };
 
-var inputDate = d3.select("#date_in");
-var country = d3.select("#country");
-var state = d3.select("#state");
-var city = d3.select("#city");
-var shape = d3.select("#shape");
-var form = d3.select("#form");
+
 
 inputDate.on("change", function() {
     filter_array.push(filter_date);
