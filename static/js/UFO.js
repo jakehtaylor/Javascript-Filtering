@@ -22,7 +22,7 @@ function buildTable(data) {
     });
 };
 
-buildTable(sightings);
+buildTable(data);
 
 var inputDate = d3.select("#date_in");
 var country = d3.select("#country");
@@ -51,7 +51,8 @@ function state_drop(){
     var filtered = sightings.filter(sight => sight.country === country);
     var states = filtered.map(f => f.state);
     var unique_sts = [... new Set(states)];
-    unique_sts.forEach(s => {
+    var sts_alph = unique_sts.sort();
+    sts_alph.forEach(s => {
         var o = state.append("option");
         o.text(s);
     });
@@ -71,7 +72,8 @@ function city_drop(){
     var filtered = sightings.filter(sight => sight.state === state);
     var cities = filtered.map(f => f.city);
     var unique_cts = [... new Set(cities)];
-    unique_cts.forEach(c => {
+    var cts_alph = unique_cts.sort();
+    cts_alph.forEach(c => {
         var o = city.append("option");
         o.text(c);
     });
