@@ -28,6 +28,7 @@ var inputDate = d3.select("#date_in");
 var country = d3.select("#country");
 var state = d3.select("#state");
 var city = d3.select("#city");
+var shape = d3.select("#shape");
 var form = d3.select("#form");
 
 function filter_date() {
@@ -84,7 +85,23 @@ function filter_city() {
     buildTable(filtered);
 };
 
+var shapes = sightings.map(s => s.shape);
+var u_shapes = [... new Set(shapes)];
+u_shapes.forEach(sh => {
+    console.log(sh);
+    var o = shape.append("option");
+        o.text(sh);
+});
+
+function filter_shape() {
+    var shape = d3.event.target.value;
+    var filtered = sightings.filter(sight => sight.shape === shape);
+    tbody.html("");
+    buildTable(filtered);
+};
+
 inputDate.on("change", filter_date);
+shape.on("change", filter_shape);
 
 country.on("change", function () {
     filter_country();
