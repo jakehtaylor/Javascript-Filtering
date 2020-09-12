@@ -46,7 +46,7 @@ function filter_country(data) {
 };
 
 function state_drop(){
-    state.html("<option selected>choose...</option>");
+    state.html("<option selected>all</option>");
     var country = d3.event.target.value;
     var filtered = sightings.filter(sight => sight.country === country);
     var states = filtered.map(f => f.state);
@@ -66,7 +66,7 @@ function filter_state(data) {
 };
 
 function city_drop(){
-    city.html("<option selected>choose...</option>");
+    city.html("<option selected>all</option>");
     var state = d3.event.target.value;
     var filtered = sightings.filter(sight => sight.state === state);
     var cities = filtered.map(f => f.city);
@@ -123,7 +123,6 @@ state.on("change", function () {
 
 city.on("change", function() {
     filter_array.push(filter_city);
-    
     filter();
 });
 
