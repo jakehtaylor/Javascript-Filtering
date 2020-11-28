@@ -1,25 +1,21 @@
 
 const sightings = data;
-
 // data provided in the data.js file
 
 var tbody = d3.select("tbody");
 var head = d3.select("thead"); 
-
 // selecting table elements with d3
 
 var headers = Object.keys(sightings[0]);
 var hrow = head.append("tr");
 
 // loop to add each column header
-
 headers.forEach(head => {
     var cell = hrow.append("th");
     cell.text(head);
 });
 
 // function that builds out a table from given data
-
 function buildTable(data) {
     data.forEach(sight => {
         var row = tbody.append("tr");
@@ -31,11 +27,9 @@ function buildTable(data) {
 };
 
 // creates unfiltered table when the page is loaded.
-
 buildTable(data);
 
 // retrieving each of the filter items by id
-
 var inputDate = d3.select("#date_in");
 var country = d3.select("#country");
 var state = d3.select("#state");
@@ -44,7 +38,6 @@ var shape = d3.select("#shape");
 var form = d3.select("#form");
 
 // populating the shape drop down with all of the unique shape values
-
 var shapes = sightings.map(s => s.shape);
 var u_shapes = [... new Set(shapes)];
 u_shapes.forEach(sh => {
@@ -140,7 +133,6 @@ function city_drop(){
 };
 
 // array of filtering functions 
-
 filter_array = [];
 
 // on any change of the filters, the associated filter function gets pushed to the filter array
@@ -174,7 +166,6 @@ city.on("change", function() {
 });
 
 // prevents the page from fully reloading on form submission
-
 form.on("submit", function() {
     d3.event.preventDefault();
 });
