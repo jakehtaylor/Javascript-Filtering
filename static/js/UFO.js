@@ -6,7 +6,7 @@ var tbody = d3.select("tbody");
 var head = d3.select("thead"); 
 // selecting table elements with d3
 
-var headers = Object.keys(sightings[0]);
+var headers = ['Date', 'City', 'State', 'Country', 'Shape', 'Duration', 'Comments']
 var hrow = head.append("tr");
 
 // loop to add each column header
