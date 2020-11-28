@@ -7,6 +7,6 @@ You'll notice that there are initially no options in the state and city dropdown
 
 A full breakdown of the code that makes this filtering possible can be found in the UFO.js file in the static folder. See table_demo.png for a snapshot of the website with a few filters active.
 
-
+![](table_demo.png)
 
 
