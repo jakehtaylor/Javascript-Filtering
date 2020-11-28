@@ -5,8 +5,8 @@ This repository contains an html page with a table of data on reported UFO sight
 
 You'll notice that there are initially no options in the state and city dropdowns. I've set the location section to be progressively selective. If you select an option from the country dropdown, the state dropdown will be populated with the states in the dataset that are within that country. likewise, if you select an option from the state dropdown, the city dropdown will now contain all the cities within that state that have UFO sightings recorded in this dataset. This is much easier to navigate than having every option in the three dropdowns.
 
-A full breakdown of the code that makes this filtering possible can be found in the UFO.js file in the static folder. See table_demo.png for a snapshot of the website with a few filters active.
+A full breakdown of the code that makes this filtering possible can be found in the UFO.js file in the static folder. See demo_image.png for a snapshot of the website with a few filters active.
 
-![](table_demo.png)
+![](demo_image.png)
 
 
