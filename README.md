@@ -1,4 +1,4 @@
-# javascript-challenge: UFO Sightings #
+# Javascript-Filtering: UFO Sightings #
 
 
 This repository contains an html page with a table of data on reported UFO sightings during the first two weeks of 2010. The table can be filtered on date, shape of UFO, and location (country, state, city). These filters can all be stacked -- for example, choosing a date and shape will return a table where both of those criteria are fulfilled. If you've activated multiple filters, but now want to re-widen the scope of your search, resetting a value to 'all' (or clearing the input, in the case of the date filter specifically) will undo that particular filter.
